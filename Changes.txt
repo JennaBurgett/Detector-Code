@@ -1,2 +1,4 @@
 how does this work?
 DOES IT WORK LIKE THIS
+
+Now that the branch protection is activated, I wonder if it is possible for me to push to master.
