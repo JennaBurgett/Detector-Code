@@ -111,6 +111,37 @@ def savitzky_golay(y, window_size, order, deriv=0, rate=1):
 
     #return smoothed
 
+#def smoothListGaussian(list,degree=5):
+#smooth_list_Gaussian smooths a data set by averaging using a weigthed Gaussian
+#Returns a smoothed 1D array of identical size of input data used to better identify peaks.
+#This is the old code with the original smooth fit function. Only one of the three smooth fit functions will be used at a time. 
+#The second smooth fit function used remains in comments above. 
+
+     #window=degree*2-1
+
+     #weight=np.array([1.0]*window)
+
+     #weightGauss=[]
+
+     #for i in range(window):
+
+         #i=i-degree+1
+
+         #frac=i/float(window) 
+         
+         #gauss=1/(np.exp((4*(frac))**2))
+         
+         #weightGauss.append(gauss)
+
+     #weight=np.array(weightGauss)*weight
+
+     #smoothed=[0.]*(len(list)-window)
+
+     #for i in range(len(smoothed)):
+
+         #smoothed[i]=sum(np.array(list[i:i+window])*weight)/sum(weight)
+
+     #return smoothed
     
 
 def peakdet(v, delta, x=None):
