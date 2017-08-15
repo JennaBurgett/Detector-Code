@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Aug 10 11:29:19 2017
-
-@author: Cameron
-"""
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
