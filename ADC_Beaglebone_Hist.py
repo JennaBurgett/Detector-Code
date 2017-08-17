@@ -210,7 +210,7 @@ def thirdorderpoly_gauss_function(x, a, b, c, d, P, xmean, s):
 #IMPORTING DATA AND CREATING THE PROPER ARRAY'S
 import csv
 
-file_name = raw_input("Please input Source data: ")       #prompts user to input a file name, must be in .csv format
+"""file_name = raw_input("Please input Source data: ")       #prompts user to input a file name, must be in .csv format
 V1 = []              
                             #initializing the lists for each channel to be filled from file
 with open(file_name) as csvfile:                       #appends each column of data into a 1D numpy array.
@@ -219,6 +219,32 @@ with open(file_name) as csvfile:                       #appends each column of d
     for row in readCSV:
         V1.append(float(row[0]))
 Channel = np.array(V1)
+"""
+
+#Since the format of the ADC data is that every third row is a data packet, here we pick out those rows and turn them into an array for us to use.
+file_name=raw_input("input file name: ")
+
+val=[]
+i=0
+with open(file_name) as csvfile:
+    readCSV=csv.reader(csvfile, delimiter= ',')
+    for row in readCSV:
+        print "beginning"
+        if i==0:
+            print "yo"
+            i=i+1
+        if i % 3 == 0:
+            print "we made it doggie"
+           # print row
+            for j in arange(100):
+              #  print row[j]
+                val.append(float(row[j]))
+            i=i+1
+        else:
+            i=i+1
+        print "ending one row in csv"
+        
+Channel = np.array(val)
 
 #Creates random numbers in order to test the code, the sigma changes how wide it gets while the
 #added on portion shifts it up in ADC bins.
